@@ -1,0 +1,5 @@
+rootProject.name = 'test-model'
+
+include 'app'
+include 'base'
+include 'core'

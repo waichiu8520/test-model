@@ -1,0 +1,17 @@
+dependencies{
+    implementation project(':core')
+    implementation project(':base')
+}
+
+war {
+    enabled = true
+}
+
+springBoot {
+    mainClassName = 'com.sunny.ApiApplication'
+}
+
+
+bootWar {
+    archiveName 'API.war'
+}
