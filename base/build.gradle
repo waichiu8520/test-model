@@ -1,4 +1,14 @@
 dependencies{
     implementation project(':core')
-    implementation project(':base')
+    implementation("com.querydsl:querydsl-jpa:4.1.4")
+}
+
+bootWar {
+    enabled = false
+}
+
+
+
+springBoot {
+    mainClassName = 'com.sunny.MainApplication'
 }

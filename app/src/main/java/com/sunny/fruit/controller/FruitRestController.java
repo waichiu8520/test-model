@@ -16,7 +16,9 @@ public class FruitRestController {
         this.fruitAPIService = fruitAPIService;
     }
 
-   // @RequestMapping(value = "fruittest", method = RequestMethod.POST)
-   // public API
+    @RequestMapping(value = "fruittest", method = RequestMethod.POST)
+    public void fruittest(){
+
+    }
 
 }
