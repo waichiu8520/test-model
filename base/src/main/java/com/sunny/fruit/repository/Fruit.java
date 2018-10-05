@@ -2,10 +2,7 @@ package com.sunny.fruit.repository;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Fruit {
@@ -15,9 +12,15 @@ public class Fruit {
     @GenericGenerator(name = "native", strategy = "native")
     private Integer fruitId;
 
+    @Column(length = 5)
     private String fruitName;
 
     private String fruitColor;
+
+    public Fruit(String fruitName, String fruitColor) {
+        this.fruitName = fruitName;
+        this.fruitColor = fruitColor;
+    }
 
     public Integer getFruitId() {
         return fruitId;
