@@ -1,31 +1,28 @@
 package com.sunny.fruit.controller;
 
-import com.sunny.fruit.repository.Fruit;
+import com.sunny.common.response.APIResponse;
+import com.sunny.fruit.form.FruitSearchForm;
 import com.sunny.fruit.service.FruitAPIService;
-import com.sunny.fruit.service.FruitCRUDService;
-import com.sunny.fruit.service.FruitService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.transaction.Transactional;
+import javax.validation.Valid;
 
 @RestController
 public class FruitRestController {
 
     private FruitAPIService fruitAPIService;
-    private FruitService fruitService;
 
     @Autowired
-    public void setup(FruitAPIService fruitAPIService, FruitService fruitService){
+    public void setup(FruitAPIService fruitAPIService){
         this.fruitAPIService = fruitAPIService;
-        this.fruitService = fruitService;
     }
 
-    @RequestMapping(value = "fruittest", method = RequestMethod.GET)
-    public void fruittest(){
-        fruitService.savea();
+    @RequestMapping(value = "get", method = RequestMethod.POST)
+    public APIResponse get(@Valid @RequestBody FruitSearchForm fruitSearchForm){
+        return fruitAPIService.get(fruitSearchForm);
     }
-
 }

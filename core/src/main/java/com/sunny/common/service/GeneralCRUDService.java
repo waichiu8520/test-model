@@ -5,5 +5,4 @@ public interface GeneralCRUDService {
     Object save(Object entity);
 
 
-
 }

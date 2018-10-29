@@ -1,8 +1,10 @@
 package com.sunny.fruit.repository;
 
+import com.sunny.nutrition.repository.Nutrition;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Fruit {
@@ -12,10 +14,21 @@ public class Fruit {
     @GenericGenerator(name = "native", strategy = "native")
     private Integer fruitId;
 
-    @Column(length = 5)
+    @Column(length = 20)
     private String fruitName;
 
+    @Column(length = 20)
     private String fruitColor;
+
+
+    @OneToMany(
+            mappedBy = "fruit",
+            cascade = CascadeType.ALL
+    )
+    private List<Nutrition> nutritions;
+
+
+    public Fruit(){}
 
     public Fruit(String fruitName, String fruitColor) {
         this.fruitName = fruitName;
