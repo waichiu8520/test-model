@@ -13,5 +13,10 @@ springBoot {
 
 
 bootWar {
-    archiveName 'API.war'
+    archiveName 'APIApplication.war'
+}
+
+jar{
+    baseName = 'myapp'
+    version = 'version'
 }
