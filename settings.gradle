@@ -1,5 +1,5 @@
 rootProject.name = 'test-model'
 
-include 'app'
+include 'api'
 include 'base'
 include 'core'
