@@ -19,6 +19,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 			http.csrf().disable();
 		}
 
-		http.authorizeRequests().
+
+
+		//http.authorizeRequests().anyRequest().hasIpAddress("127.0.0.1/32");
 	}
 }
