@@ -15,12 +15,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		if(!enableCsrf){
-			http.csrf().disable();
-		}
+		http.csrf().disable();
 
-
-
-		//http.authorizeRequests().anyRequest().hasIpAddress("127.0.0.1/32");
+		http.formLogin()
+				.loginPage("/**/login");
 	}
 }
